@@ -1,4 +1,7 @@
+import 'package:animated_list_plus/animated_list_plus.dart';
+import 'package:animated_list_plus/transitions.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:exampleddd/domain/core/failures.dart';
 import 'package:exampleddd/domain/notes/value_objects.dart';
 import 'package:exampleddd/presentation/notes/note_form/misc/todo_item_presentation_classes.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:exampleddd/application/notes/note_form/note_form_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:provider/provider.dart';
 import 'package:exampleddd/presentation/notes/note_form/misc/build_context_x.dart';
 import 'package:kt_dart/kt.dart';
@@ -35,30 +37,46 @@ class TodoListWidget extends StatelessWidget {
         builder: (context, formTodos, child) {
           return ImplicitlyAnimatedReorderableList<TodoItemPrimitive>(
             shrinkWrap: true,
-            removeDuration: const Duration(),
+            removeDuration: Duration.zero,
             items: formTodos.value.asList(),
             areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
             onReorderFinished: (item, from, to, newItems) {
               context.formTodos = newItems.toImmutableList();
-              context
-                  .read<NoteFormBloc>()
-                  .add(NoteFormEvent.todosChange(context.formTodos));
+              context.read<NoteFormBloc>().add(
+                NoteFormEvent.todosChange(context.formTodos),
+              );
             },
             itemBuilder: (context, itemAnimation, item, index) {
               return Reorderable(
-                builder: (context, dragAnimation, isDrag) {
-                  return ScaleTransition(
-                    scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
-                    child: TodoTile(
-                      index: index,
-                      elevation: dragAnimation.value*4,
+                key: ValueKey(item.id),
+                builder: (context, dragAnimation, isDragging) {
+                  return SizeFadeTransition(
+                    animation: itemAnimation,
+                    child: ScaleTransition(
+                      scale: Tween<double>(begin: 1, end: 0.95).animate(dragAnimation),
+                      child: TodoTile(
+                        index: index,
+                        elevation: dragAnimation.value * 4,
+                      ),
                     ),
                   );
                 },
-                key: ValueKey(item.id),
               );
             },
-            //removeItemBuilder: (context, animation, item){},
+            removeItemBuilder: (context, animation, item) {
+              return Reorderable(
+                key: ValueKey(item.id),
+                builder: (context, dragAnimation, isDragging) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: const TodoTile(
+                      index: 0, // or use a placeholder index
+                      elevation: 0,
+                    ),
+                  );
+                },
+              );
+            },
           );
         },
       ),
@@ -79,21 +97,25 @@ class TodoTile extends HookWidget {
         context.formTodos.getOrElse(index, (_) => TodoItemPrimitive.empty());
     final textEditingController = useTextEditingController(text: todo.name);
     return Slidable(
-      actionPane: const SlidableDrawerActionPane(),
-      actionExtentRatio: 0.15,
-      secondaryActions: [
-        IconSlideAction(
-          caption: 'Delete',
-          icon: Icons.delete,
-          color: Colors.red,
-          onTap: () {
-            context.formTodos = context.formTodos.minusElement(todo);
-            context
-                .read<NoteFormBloc>()
-                .add(NoteFormEvent.todosChange(context.formTodos));
-          },
-        ),
-      ],
+      key: ValueKey(todo.id), // recommended for performance
+      endActionPane: ActionPane(
+        motion: const DrawerMotion(),
+        extentRatio: 0.15,
+        children: [
+          SlidableAction(
+            onPressed: (context) {
+              context.formTodos = context.formTodos.minusElement(todo);
+              context.read<NoteFormBloc>().add(
+                NoteFormEvent.todosChange(context.formTodos),
+              );
+            },
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
+            icon: Icons.delete,
+            label: 'Delete',
+          ),
+        ],
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
         child: Material(

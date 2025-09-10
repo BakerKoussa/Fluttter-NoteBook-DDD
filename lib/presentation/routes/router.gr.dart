@@ -1,88 +1,106 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
 
-import 'package:auto_route/auto_route.dart' as _i1;
-import 'package:flutter/material.dart' as _i2;
+// ignore_for_file: type=lint
+// coverage:ignore-file
 
-import '../../domain/notes/note.dart' as _i7;
-import '../notes/note_form/note_form_page.dart' as _i6;
-import '../notes/notes_overview/notes_overview_page.dart' as _i5;
-import '../sign_in/sign_in_page.dart' as _i4;
-import '../splash/splash_page.dart' as _i3;
+part of 'router.dart';
 
-class AppRouter extends _i1.RootStackRouter {
-  AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
-
-  @override
-  final Map<String, _i1.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i3.SplashPage();
-        }),
-    SignInRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i4.SignInPage();
-        }),
-    NotesOverviewRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i5.NotesOverviewPage();
-        }),
-    NoteFormRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<NoteFormRouteArgs>();
-          return _i6.NoteFormPage(key: args.key, editedNote: args.editedNote);
-        },
-        fullscreenDialog: true)
-  };
-
-  @override
-  List<_i1.RouteConfig> get routes => [
-        _i1.RouteConfig(SplashRoute.name, path: '/'),
-        _i1.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
-        _i1.RouteConfig(NotesOverviewRoute.name, path: '/notes-overview-page'),
-        _i1.RouteConfig(NoteFormRoute.name, path: '/note-form-page')
-      ];
-}
-
-class SplashRoute extends _i1.PageRouteInfo {
-  const SplashRoute() : super(name, path: '/');
-
-  static const String name = 'SplashRoute';
-}
-
-class SignInRoute extends _i1.PageRouteInfo {
-  const SignInRoute() : super(name, path: '/sign-in-page');
-
-  static const String name = 'SignInRoute';
-}
-
-class NotesOverviewRoute extends _i1.PageRouteInfo {
-  const NotesOverviewRoute() : super(name, path: '/notes-overview-page');
-
-  static const String name = 'NotesOverviewRoute';
-}
-
-class NoteFormRoute extends _i1.PageRouteInfo<NoteFormRouteArgs> {
-  NoteFormRoute({_i2.Key? key, required _i7.Note editedNote})
-      : super(name,
-            path: '/note-form-page',
-            args: NoteFormRouteArgs(key: key, editedNote: editedNote));
+/// generated route for
+/// [NoteFormPage]
+class NoteFormRoute extends PageRouteInfo<NoteFormRouteArgs> {
+  NoteFormRoute({
+    Key? key,
+    required Note editedNote,
+    List<PageRouteInfo>? children,
+  }) : super(
+         NoteFormRoute.name,
+         args: NoteFormRouteArgs(key: key, editedNote: editedNote),
+         initialChildren: children,
+       );
 
   static const String name = 'NoteFormRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<NoteFormRouteArgs>();
+      return NoteFormPage(key: args.key, editedNote: args.editedNote);
+    },
+  );
 }
 
 class NoteFormRouteArgs {
   const NoteFormRouteArgs({this.key, required this.editedNote});
 
-  final _i2.Key? key;
+  final Key? key;
 
-  final _i7.Note editedNote;
+  final Note editedNote;
+
+  @override
+  String toString() {
+    return 'NoteFormRouteArgs{key: $key, editedNote: $editedNote}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! NoteFormRouteArgs) return false;
+    return key == other.key && editedNote == other.editedNote;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ editedNote.hashCode;
+}
+
+/// generated route for
+/// [NotesOverviewPage]
+class NotesOverviewRoute extends PageRouteInfo<void> {
+  const NotesOverviewRoute({List<PageRouteInfo>? children})
+    : super(NotesOverviewRoute.name, initialChildren: children);
+
+  static const String name = 'NotesOverviewRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const NotesOverviewPage();
+    },
+  );
+}
+
+/// generated route for
+/// [SignInPage]
+class SignInRoute extends PageRouteInfo<void> {
+  const SignInRoute({List<PageRouteInfo>? children})
+    : super(SignInRoute.name, initialChildren: children);
+
+  static const String name = 'SignInRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SignInPage();
+    },
+  );
+}
+
+/// generated route for
+/// [SplashPage]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+    : super(SplashRoute.name, initialChildren: children);
+
+  static const String name = 'SplashRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SplashPage();
+    },
+  );
 }

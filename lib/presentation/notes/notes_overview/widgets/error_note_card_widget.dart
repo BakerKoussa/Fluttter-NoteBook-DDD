@@ -15,7 +15,7 @@ class ErrorNoteCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).errorColor,
+      color: Theme.of(context).colorScheme.error,
       child: InkWell(
         onTap: () {},
         onLongPress: () {
@@ -44,7 +44,7 @@ class ErrorNoteCardWidget extends StatelessWidget {
               ),
               Text(
                 note.failureOption.fold(() => '', (f) => f.toString()),
-                style: Theme.of(context).primaryTextTheme.bodyText2,
+                style: Theme.of(context).primaryTextTheme.bodyMedium,
               ),
             ],
           ),

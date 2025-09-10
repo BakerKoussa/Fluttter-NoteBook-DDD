@@ -29,4 +29,16 @@ class TodoItem with _$TodoItem {
     return name.value.fold((f) => some(f), (_) => none());
   }
 
+  @override
+  // TODO: implement done
+  bool get done => throw UnimplementedError();
+
+  @override
+  // TODO: implement id
+  UniqueId get id => throw UnimplementedError();
+
+  @override
+  // TODO: implement name
+  TodoName get name => throw UnimplementedError();
+
 }

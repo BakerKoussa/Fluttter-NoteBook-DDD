@@ -3,16 +3,17 @@ import 'package:auto_route/auto_route.dart';
 import 'package:exampleddd/application/auth/auth_bloc.dart';
 import 'package:exampleddd/application/notes/note_watcher/note_watcher_bloc.dart';
 import 'package:exampleddd/domain/notes/note.dart';
+import 'package:exampleddd/domain/notes/note_failure.dart';
 import 'package:exampleddd/injection.dart';
 import 'package:exampleddd/presentation/notes/notes_overview/widgets/notes_overview_body.dart';
 import 'package:exampleddd/presentation/notes/notes_overview/widgets/uncompleted_switch.dart';
-import 'package:exampleddd/presentation/routes/router.gr.dart';
+import 'package:exampleddd/presentation/routes/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:exampleddd/application/notes/note_actor/note_actor_bloc.dart';
-
+@RoutePage()
 class NotesOverviewPage extends StatelessWidget {
-  const NotesOverviewPage({Key? key}) : super(key: key);
+  const NotesOverviewPage({super.key});
 
   @override
   Widget build(BuildContext context) {

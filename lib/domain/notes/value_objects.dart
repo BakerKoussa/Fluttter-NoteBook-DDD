@@ -9,7 +9,7 @@ import 'package:kt_dart/kt.dart';
 class NoteBody extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
-  static const maxLength = 1000;
+  static const maxLength = 2000;
 
   factory NoteBody(String input) {
     return NoteBody._(
@@ -41,7 +41,14 @@ class NoteColor extends ValueObject<Color> {
     Color(0xfffedc56),
     Color(0xffd0f0c0),
     Color(0xfffca3b7),
-    Color(0xff997950),
+    Color(0xfffcaa40),
+    Color(0xff4990fd),
+    Color(0xfffc60c0),
+    Color(0xff62ff63),
+    Color(0xfffd54a9),
+    Color(0xff55fac8),
+    Color(0xfffd4343),
+    Color(0xff9955fd),
   ];
   @override
   final Either<ValueFailure<Color>, Color> value;

@@ -40,4 +40,20 @@ class Note with _$Note {
     ).fold((f) => some(f), (_) => none());
   }
 
+  @override
+  // TODO: implement body
+  NoteBody get body => throw UnimplementedError();
+
+  @override
+  // TODO: implement color
+  NoteColor get color => throw UnimplementedError();
+
+  @override
+  // TODO: implement id
+  UniqueId get id => throw UnimplementedError();
+
+  @override
+  // TODO: implement todos
+  Litt3<TodoItem> get todos => throw UnimplementedError();
+
 }

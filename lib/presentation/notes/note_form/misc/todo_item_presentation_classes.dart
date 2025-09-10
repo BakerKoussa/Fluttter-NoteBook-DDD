@@ -43,4 +43,16 @@ class TodoItemPrimitive with _$TodoItemPrimitive {
       done: done,
     );
   }
+
+  @override
+  // TODO: implement done
+  bool get done => throw UnimplementedError();
+
+  @override
+  // TODO: implement id
+  UniqueId get id => throw UnimplementedError();
+
+  @override
+  // TODO: implement name
+  String get name => throw UnimplementedError();
 }

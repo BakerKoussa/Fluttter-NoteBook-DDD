@@ -1,3 +1,4 @@
+import 'package:exampleddd/domain/core/failures.dart';
 import 'package:exampleddd/domain/notes/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

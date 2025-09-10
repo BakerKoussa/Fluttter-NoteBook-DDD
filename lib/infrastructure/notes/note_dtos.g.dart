@@ -6,36 +6,33 @@ part of 'note_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NoteDto _$_$_NoteDtoFromJson(Map<String, dynamic> json) {
-  return _$_NoteDto(
-    body: json['body'] as String,
-    color: json['color'] as int,
-    todos: (json['todos'] as List<dynamic>)
-        .map((e) => TodoItemDto.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    serverTimeStamp:
-        const FieldValueConverter().fromJson(json['serverTimeStamp'] as Object),
-  );
-}
+_NoteDto _$NoteDtoFromJson(Map<String, dynamic> json) => _NoteDto(
+  body: json['body'] as String,
+  color: (json['color'] as num).toInt(),
+  todos: (json['todos'] as List<dynamic>)
+      .map((e) => TodoItemDto.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  serverTimeStamp: const FieldValueConverter().fromJson(
+    json['serverTimeStamp'] as Object,
+  ),
+);
 
-Map<String, dynamic> _$_$_NoteDtoToJson(_$_NoteDto instance) =>
-    <String, dynamic>{
-      'body': instance.body,
-      'color': instance.color,
-      'todos': instance.todos.map((e) => e.toJson()).toList(),
-      'serverTimeStamp':
-          const FieldValueConverter().toJson(instance.serverTimeStamp),
-    };
+Map<String, dynamic> _$NoteDtoToJson(_NoteDto instance) => <String, dynamic>{
+  'body': instance.body,
+  'color': instance.color,
+  'todos': instance.todos.map((e) => e.toJson()).toList(),
+  'serverTimeStamp': const FieldValueConverter().toJson(
+    instance.serverTimeStamp,
+  ),
+};
 
-_$_TodoItemDto _$_$_TodoItemDtoFromJson(Map<String, dynamic> json) {
-  return _$_TodoItemDto(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    done: json['done'] as bool,
-  );
-}
+_TodoItemDto _$TodoItemDtoFromJson(Map<String, dynamic> json) => _TodoItemDto(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  done: json['done'] as bool,
+);
 
-Map<String, dynamic> _$_$_TodoItemDtoToJson(_$_TodoItemDto instance) =>
+Map<String, dynamic> _$TodoItemDtoToJson(_TodoItemDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

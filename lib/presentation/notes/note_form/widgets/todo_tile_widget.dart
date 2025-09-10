@@ -6,7 +6,7 @@ import 'package:kt_dart/collection.dart';
 import 'package:exampleddd/presentation/notes/note_form/misc/build_context_x.dart';
 
 class TodoTileWidget extends StatelessWidget {
-  const TodoTileWidget({Key? key}) : super(key: key);
+  const TodoTileWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class TodoTileWidget extends StatelessWidget {
         context.formTodos = state.note.todos.value.fold(
           (f) => listOf<TodoItemPrimitive>(),
           (todoItemList) =>
-              todoItemList.map((_) => TodoItemPrimitive.fromDomain(_)),
+              todoItemList.map((e) => TodoItemPrimitive.fromDomain(e)),
         );
       },
       //buildWhen: (p, c) => p.note.todos.isFull != c.note.todos.isFull,

@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_dtos.dart';
 
@@ -7,452 +9,556 @@ part of 'note_dtos.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-NoteDto _$NoteDtoFromJson(Map<String, dynamic> json) {
-  return _NoteDto.fromJson(json);
-}
-
-/// @nodoc
-class _$NoteDtoTearOff {
-  const _$NoteDtoTearOff();
-
-  _NoteDto call(
-      {@JsonKey(ignore: true) String id = '0',
-      required String body,
-      required int color,
-      required List<TodoItemDto> todos,
-      @FieldValueConverter() required FieldValue serverTimeStamp}) {
-    return _NoteDto(
-      id: id,
-      body: body,
-      color: color,
-      todos: todos,
-      serverTimeStamp: serverTimeStamp,
-    );
-  }
-
-  NoteDto fromJson(Map<String, Object> json) {
-    return NoteDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NoteDto = _$NoteDtoTearOff();
 
 /// @nodoc
 mixin _$NoteDto {
-  @JsonKey(ignore: true)
-  String get id => throw _privateConstructorUsedError;
-  String get body => throw _privateConstructorUsedError;
-  int get color => throw _privateConstructorUsedError;
-  List<TodoItemDto> get todos => throw _privateConstructorUsedError;
-  @FieldValueConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $NoteDtoCopyWith<NoteDto> get copyWith => throw _privateConstructorUsedError;
+@JsonKey(ignore: true) String get id; String get body; int get color; List<TodoItemDto> get todos;@FieldValueConverter() FieldValue get serverTimeStamp;
+/// Create a copy of NoteDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NoteDtoCopyWith<NoteDto> get copyWith => _$NoteDtoCopyWithImpl<NoteDto>(this as NoteDto, _$identity);
+
+  /// Serializes this NoteDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoteDto&&(identical(other.id, id) || other.id == id)&&(identical(other.body, body) || other.body == body)&&(identical(other.color, color) || other.color == color)&&const DeepCollectionEquality().equals(other.todos, todos)&&(identical(other.serverTimeStamp, serverTimeStamp) || other.serverTimeStamp == serverTimeStamp));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,body,color,const DeepCollectionEquality().hash(todos),serverTimeStamp);
+
+@override
+String toString() {
+  return 'NoteDto(id: $id, body: $body, color: $color, todos: $todos, serverTimeStamp: $serverTimeStamp)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $NoteDtoCopyWith<$Res> {
-  factory $NoteDtoCopyWith(NoteDto value, $Res Function(NoteDto) then) =
-      _$NoteDtoCopyWithImpl<$Res>;
-  $Res call(
-      {@JsonKey(ignore: true) String id,
-      String body,
-      int color,
-      List<TodoItemDto> todos,
-      @FieldValueConverter() FieldValue serverTimeStamp});
+abstract mixin class $NoteDtoCopyWith<$Res>  {
+  factory $NoteDtoCopyWith(NoteDto value, $Res Function(NoteDto) _then) = _$NoteDtoCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(ignore: true) String id, String body, int color, List<TodoItemDto> todos,@FieldValueConverter() FieldValue serverTimeStamp
+});
+
+
+
+
 }
-
 /// @nodoc
-class _$NoteDtoCopyWithImpl<$Res> implements $NoteDtoCopyWith<$Res> {
-  _$NoteDtoCopyWithImpl(this._value, this._then);
+class _$NoteDtoCopyWithImpl<$Res>
+    implements $NoteDtoCopyWith<$Res> {
+  _$NoteDtoCopyWithImpl(this._self, this._then);
 
-  final NoteDto _value;
-  // ignore: unused_field
+  final NoteDto _self;
   final $Res Function(NoteDto) _then;
 
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? body = freezed,
-    Object? color = freezed,
-    Object? todos = freezed,
-    Object? serverTimeStamp = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: color == freezed
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as int,
-      todos: todos == freezed
-          ? _value.todos
-          : todos // ignore: cast_nullable_to_non_nullable
-              as List<TodoItemDto>,
-      serverTimeStamp: serverTimeStamp == freezed
-          ? _value.serverTimeStamp
-          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
-    ));
-  }
+/// Create a copy of NoteDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? body = null,Object? color = null,Object? todos = null,Object? serverTimeStamp = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,body: null == body ? _self.body : body // ignore: cast_nullable_to_non_nullable
+as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as int,todos: null == todos ? _self.todos : todos // ignore: cast_nullable_to_non_nullable
+as List<TodoItemDto>,serverTimeStamp: null == serverTimeStamp ? _self.serverTimeStamp : serverTimeStamp // ignore: cast_nullable_to_non_nullable
+as FieldValue,
+  ));
 }
 
-/// @nodoc
-abstract class _$NoteDtoCopyWith<$Res> implements $NoteDtoCopyWith<$Res> {
-  factory _$NoteDtoCopyWith(_NoteDto value, $Res Function(_NoteDto) then) =
-      __$NoteDtoCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {@JsonKey(ignore: true) String id,
-      String body,
-      int color,
-      List<TodoItemDto> todos,
-      @FieldValueConverter() FieldValue serverTimeStamp});
 }
 
-/// @nodoc
-class __$NoteDtoCopyWithImpl<$Res> extends _$NoteDtoCopyWithImpl<$Res>
-    implements _$NoteDtoCopyWith<$Res> {
-  __$NoteDtoCopyWithImpl(_NoteDto _value, $Res Function(_NoteDto) _then)
-      : super(_value, (v) => _then(v as _NoteDto));
 
-  @override
-  _NoteDto get _value => super._value as _NoteDto;
+/// Adds pattern-matching-related methods to [NoteDto].
+extension NoteDtoPatterns on NoteDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? body = freezed,
-    Object? color = freezed,
-    Object? todos = freezed,
-    Object? serverTimeStamp = freezed,
-  }) {
-    return _then(_NoteDto(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: color == freezed
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as int,
-      todos: todos == freezed
-          ? _value.todos
-          : todos // ignore: cast_nullable_to_non_nullable
-              as List<TodoItemDto>,
-      serverTimeStamp: serverTimeStamp == freezed
-          ? _value.serverTimeStamp
-          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
-    ));
-  }
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _NoteDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _NoteDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _NoteDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _NoteDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _NoteDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _NoteDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(ignore: true)  String id,  String body,  int color,  List<TodoItemDto> todos, @FieldValueConverter()  FieldValue serverTimeStamp)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _NoteDto() when $default != null:
+return $default(_that.id,_that.body,_that.color,_that.todos,_that.serverTimeStamp);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(ignore: true)  String id,  String body,  int color,  List<TodoItemDto> todos, @FieldValueConverter()  FieldValue serverTimeStamp)  $default,) {final _that = this;
+switch (_that) {
+case _NoteDto():
+return $default(_that.id,_that.body,_that.color,_that.todos,_that.serverTimeStamp);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(ignore: true)  String id,  String body,  int color,  List<TodoItemDto> todos, @FieldValueConverter()  FieldValue serverTimeStamp)?  $default,) {final _that = this;
+switch (_that) {
+case _NoteDto() when $default != null:
+return $default(_that.id,_that.body,_that.color,_that.todos,_that.serverTimeStamp);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteDto extends _NoteDto {
-  const _$_NoteDto(
-      {@JsonKey(ignore: true) this.id = '0',
-      required this.body,
-      required this.color,
-      required this.todos,
-      @FieldValueConverter() required this.serverTimeStamp})
-      : super._();
 
-  factory _$_NoteDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_NoteDtoFromJson(json);
+class _NoteDto extends NoteDto {
+  const _NoteDto({@JsonKey(ignore: true) this.id = '0', required this.body, required this.color, required final  List<TodoItemDto> todos, @FieldValueConverter() required this.serverTimeStamp}): _todos = todos,super._();
+  factory _NoteDto.fromJson(Map<String, dynamic> json) => _$NoteDtoFromJson(json);
 
-  @override
-  @JsonKey(ignore: true)
-  final String id;
-  @override
-  final String body;
-  @override
-  final int color;
-  @override
-  final List<TodoItemDto> todos;
-  @override
-  @FieldValueConverter()
-  final FieldValue serverTimeStamp;
-
-  @override
-  String toString() {
-    return 'NoteDto(id: $id, body: $body, color: $color, todos: $todos, serverTimeStamp: $serverTimeStamp)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _NoteDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.body, body) ||
-                const DeepCollectionEquality().equals(other.body, body)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)) &&
-            (identical(other.todos, todos) ||
-                const DeepCollectionEquality().equals(other.todos, todos)) &&
-            (identical(other.serverTimeStamp, serverTimeStamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverTimeStamp, serverTimeStamp)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(body) ^
-      const DeepCollectionEquality().hash(color) ^
-      const DeepCollectionEquality().hash(todos) ^
-      const DeepCollectionEquality().hash(serverTimeStamp);
-
-  @JsonKey(ignore: true)
-  @override
-  _$NoteDtoCopyWith<_NoteDto> get copyWith =>
-      __$NoteDtoCopyWithImpl<_NoteDto>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_NoteDtoToJson(this);
-  }
+@override@JsonKey(ignore: true) final  String id;
+@override final  String body;
+@override final  int color;
+ final  List<TodoItemDto> _todos;
+@override List<TodoItemDto> get todos {
+  if (_todos is EqualUnmodifiableListView) return _todos;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_todos);
 }
 
-abstract class _NoteDto extends NoteDto {
-  const factory _NoteDto(
-      {@JsonKey(ignore: true) String id,
-      required String body,
-      required int color,
-      required List<TodoItemDto> todos,
-      @FieldValueConverter() required FieldValue serverTimeStamp}) = _$_NoteDto;
-  const _NoteDto._() : super._();
+@override@FieldValueConverter() final  FieldValue serverTimeStamp;
 
-  factory _NoteDto.fromJson(Map<String, dynamic> json) = _$_NoteDto.fromJson;
+/// Create a copy of NoteDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NoteDtoCopyWith<_NoteDto> get copyWith => __$NoteDtoCopyWithImpl<_NoteDto>(this, _$identity);
 
-  @override
-  @JsonKey(ignore: true)
-  String get id => throw _privateConstructorUsedError;
-  @override
-  String get body => throw _privateConstructorUsedError;
-  @override
-  int get color => throw _privateConstructorUsedError;
-  @override
-  List<TodoItemDto> get todos => throw _privateConstructorUsedError;
-  @override
-  @FieldValueConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$NoteDtoCopyWith<_NoteDto> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$NoteDtoToJson(this, );
 }
 
-TodoItemDto _$TodoItemDtoFromJson(Map<String, dynamic> json) {
-  return _TodoItemDto.fromJson(json);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NoteDto&&(identical(other.id, id) || other.id == id)&&(identical(other.body, body) || other.body == body)&&(identical(other.color, color) || other.color == color)&&const DeepCollectionEquality().equals(other._todos, _todos)&&(identical(other.serverTimeStamp, serverTimeStamp) || other.serverTimeStamp == serverTimeStamp));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,body,color,const DeepCollectionEquality().hash(_todos),serverTimeStamp);
+
+@override
+String toString() {
+  return 'NoteDto(id: $id, body: $body, color: $color, todos: $todos, serverTimeStamp: $serverTimeStamp)';
+}
+
+
 }
 
 /// @nodoc
-class _$TodoItemDtoTearOff {
-  const _$TodoItemDtoTearOff();
+abstract mixin class _$NoteDtoCopyWith<$Res> implements $NoteDtoCopyWith<$Res> {
+  factory _$NoteDtoCopyWith(_NoteDto value, $Res Function(_NoteDto) _then) = __$NoteDtoCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(ignore: true) String id, String body, int color, List<TodoItemDto> todos,@FieldValueConverter() FieldValue serverTimeStamp
+});
 
-  _TodoItemDto call(
-      {required String id, required String name, required bool done}) {
-    return _TodoItemDto(
-      id: id,
-      name: name,
-      done: done,
-    );
-  }
 
-  TodoItemDto fromJson(Map<String, Object> json) {
-    return TodoItemDto.fromJson(json);
-  }
+
+
+}
+/// @nodoc
+class __$NoteDtoCopyWithImpl<$Res>
+    implements _$NoteDtoCopyWith<$Res> {
+  __$NoteDtoCopyWithImpl(this._self, this._then);
+
+  final _NoteDto _self;
+  final $Res Function(_NoteDto) _then;
+
+/// Create a copy of NoteDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? body = null,Object? color = null,Object? todos = null,Object? serverTimeStamp = null,}) {
+  return _then(_NoteDto(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,body: null == body ? _self.body : body // ignore: cast_nullable_to_non_nullable
+as String,color: null == color ? _self.color : color // ignore: cast_nullable_to_non_nullable
+as int,todos: null == todos ? _self._todos : todos // ignore: cast_nullable_to_non_nullable
+as List<TodoItemDto>,serverTimeStamp: null == serverTimeStamp ? _self.serverTimeStamp : serverTimeStamp // ignore: cast_nullable_to_non_nullable
+as FieldValue,
+  ));
 }
 
-/// @nodoc
-const $TodoItemDto = _$TodoItemDtoTearOff();
+
+}
+
 
 /// @nodoc
 mixin _$TodoItemDto {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  bool get done => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TodoItemDtoCopyWith<TodoItemDto> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get id; String get name; bool get done;
+/// Create a copy of TodoItemDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TodoItemDtoCopyWith<TodoItemDto> get copyWith => _$TodoItemDtoCopyWithImpl<TodoItemDto>(this as TodoItemDto, _$identity);
+
+  /// Serializes this TodoItemDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TodoItemDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.done, done) || other.done == done));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,done);
+
+@override
+String toString() {
+  return 'TodoItemDto(id: $id, name: $name, done: $done)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TodoItemDtoCopyWith<$Res> {
-  factory $TodoItemDtoCopyWith(
-          TodoItemDto value, $Res Function(TodoItemDto) then) =
-      _$TodoItemDtoCopyWithImpl<$Res>;
-  $Res call({String id, String name, bool done});
+abstract mixin class $TodoItemDtoCopyWith<$Res>  {
+  factory $TodoItemDtoCopyWith(TodoItemDto value, $Res Function(TodoItemDto) _then) = _$TodoItemDtoCopyWithImpl;
+@useResult
+$Res call({
+ String id, String name, bool done
+});
+
+
+
+
 }
-
 /// @nodoc
-class _$TodoItemDtoCopyWithImpl<$Res> implements $TodoItemDtoCopyWith<$Res> {
-  _$TodoItemDtoCopyWithImpl(this._value, this._then);
+class _$TodoItemDtoCopyWithImpl<$Res>
+    implements $TodoItemDtoCopyWith<$Res> {
+  _$TodoItemDtoCopyWithImpl(this._self, this._then);
 
-  final TodoItemDto _value;
-  // ignore: unused_field
+  final TodoItemDto _self;
   final $Res Function(TodoItemDto) _then;
 
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? done = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      done: done == freezed
-          ? _value.done
-          : done // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+/// Create a copy of TodoItemDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? done = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,done: null == done ? _self.done : done // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-abstract class _$TodoItemDtoCopyWith<$Res>
-    implements $TodoItemDtoCopyWith<$Res> {
-  factory _$TodoItemDtoCopyWith(
-          _TodoItemDto value, $Res Function(_TodoItemDto) then) =
-      __$TodoItemDtoCopyWithImpl<$Res>;
-  @override
-  $Res call({String id, String name, bool done});
 }
 
-/// @nodoc
-class __$TodoItemDtoCopyWithImpl<$Res> extends _$TodoItemDtoCopyWithImpl<$Res>
-    implements _$TodoItemDtoCopyWith<$Res> {
-  __$TodoItemDtoCopyWithImpl(
-      _TodoItemDto _value, $Res Function(_TodoItemDto) _then)
-      : super(_value, (v) => _then(v as _TodoItemDto));
 
-  @override
-  _TodoItemDto get _value => super._value as _TodoItemDto;
+/// Adds pattern-matching-related methods to [TodoItemDto].
+extension TodoItemDtoPatterns on TodoItemDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? done = freezed,
-  }) {
-    return _then(_TodoItemDto(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      done: done == freezed
-          ? _value.done
-          : done // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _TodoItemDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _TodoItemDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _TodoItemDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _TodoItemDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _TodoItemDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _TodoItemDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  bool done)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _TodoItemDto() when $default != null:
+return $default(_that.id,_that.name,_that.done);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  bool done)  $default,) {final _that = this;
+switch (_that) {
+case _TodoItemDto():
+return $default(_that.id,_that.name,_that.done);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  bool done)?  $default,) {final _that = this;
+switch (_that) {
+case _TodoItemDto() when $default != null:
+return $default(_that.id,_that.name,_that.done);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_TodoItemDto extends _TodoItemDto {
-  const _$_TodoItemDto(
-      {required this.id, required this.name, required this.done})
-      : super._();
 
-  factory _$_TodoItemDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_TodoItemDtoFromJson(json);
+class _TodoItemDto extends TodoItemDto {
+  const _TodoItemDto({required this.id, required this.name, required this.done}): super._();
+  factory _TodoItemDto.fromJson(Map<String, dynamic> json) => _$TodoItemDtoFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final bool done;
+@override final  String id;
+@override final  String name;
+@override final  bool done;
 
-  @override
-  String toString() {
-    return 'TodoItemDto(id: $id, name: $name, done: $done)';
-  }
+/// Create a copy of TodoItemDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TodoItemDtoCopyWith<_TodoItemDto> get copyWith => __$TodoItemDtoCopyWithImpl<_TodoItemDto>(this, _$identity);
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _TodoItemDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.done, done) ||
-                const DeepCollectionEquality().equals(other.done, done)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(done);
-
-  @JsonKey(ignore: true)
-  @override
-  _$TodoItemDtoCopyWith<_TodoItemDto> get copyWith =>
-      __$TodoItemDtoCopyWithImpl<_TodoItemDto>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_TodoItemDtoToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$TodoItemDtoToJson(this, );
 }
 
-abstract class _TodoItemDto extends TodoItemDto {
-  const factory _TodoItemDto(
-      {required String id,
-      required String name,
-      required bool done}) = _$_TodoItemDto;
-  const _TodoItemDto._() : super._();
-
-  factory _TodoItemDto.fromJson(Map<String, dynamic> json) =
-      _$_TodoItemDto.fromJson;
-
-  @override
-  String get id => throw _privateConstructorUsedError;
-  @override
-  String get name => throw _privateConstructorUsedError;
-  @override
-  bool get done => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$TodoItemDtoCopyWith<_TodoItemDto> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TodoItemDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.done, done) || other.done == done));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,done);
+
+@override
+String toString() {
+  return 'TodoItemDto(id: $id, name: $name, done: $done)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$TodoItemDtoCopyWith<$Res> implements $TodoItemDtoCopyWith<$Res> {
+  factory _$TodoItemDtoCopyWith(_TodoItemDto value, $Res Function(_TodoItemDto) _then) = __$TodoItemDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String name, bool done
+});
+
+
+
+
+}
+/// @nodoc
+class __$TodoItemDtoCopyWithImpl<$Res>
+    implements _$TodoItemDtoCopyWith<$Res> {
+  __$TodoItemDtoCopyWithImpl(this._self, this._then);
+
+  final _TodoItemDto _self;
+  final $Res Function(_TodoItemDto) _then;
+
+/// Create a copy of TodoItemDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? done = null,}) {
+  return _then(_TodoItemDto(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,done: null == done ? _self.done : done // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+// dart format on

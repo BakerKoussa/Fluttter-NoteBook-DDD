@@ -15,17 +15,19 @@ part 'note_actor_bloc.freezed.dart';
 class NoteActorBloc extends Bloc<NoteActorEvent, NoteActorState> {
   final INoteRepository _noteRepository;
 
-  NoteActorBloc(this._noteRepository) : super(const NoteActorState.initial());
+  NoteActorBloc(this._noteRepository) : super(const NoteActorState.initial()) {
+    on<_Deleted>((event, emit) async {
+      emit(const NoteActorState.actionInProgress());
 
-  @override
-  Stream<NoteActorState> mapEventToState(
-    NoteActorEvent event,
-  ) async* {
-    yield const NoteActorState.actionInProgress();
-    final possibleFailure = await _noteRepository.delete(event.note);
-    yield possibleFailure.fold(
-      (f) => NoteActorState.deleteFailure(f),
-      (_) => const NoteActorState.deleteSuccess(),
-    );
+      final possibleFailure = await _noteRepository.delete(event.note);
+
+      emit(
+        possibleFailure.fold(
+              (f) => NoteActorState.deleteFailure(f),
+              (_) => const NoteActorState.deleteSuccess(),
+        ),
+      );
+    });
   }
 }
+

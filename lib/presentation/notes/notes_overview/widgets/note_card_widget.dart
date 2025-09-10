@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:exampleddd/domain/notes/note.dart';
 import 'package:exampleddd/presentation/notes/notes_overview/widgets/todo_display_widget.dart';
-import 'package:exampleddd/presentation/routes/router.gr.dart';
+import 'package:exampleddd/presentation/routes/router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kt_dart/kt.dart';

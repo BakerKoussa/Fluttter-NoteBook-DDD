@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_actor_bloc.dart';
 
@@ -7,702 +9,630 @@ part of 'note_actor_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$NoteActorEventTearOff {
-  const _$NoteActorEventTearOff();
-
-  _Deleted deleted(Note note) {
-    return _Deleted(
-      note,
-    );
-  }
-}
-
-/// @nodoc
-const $NoteActorEvent = _$NoteActorEventTearOff();
-
 /// @nodoc
 mixin _$NoteActorEvent {
-  Note get note => throw _privateConstructorUsedError;
 
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Note note) deleted,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Note note)? deleted,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Deleted value) deleted,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Deleted value)? deleted,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+ Note get note;
+/// Create a copy of NoteActorEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NoteActorEventCopyWith<NoteActorEvent> get copyWith => _$NoteActorEventCopyWithImpl<NoteActorEvent>(this as NoteActorEvent, _$identity);
 
-  @JsonKey(ignore: true)
-  $NoteActorEventCopyWith<NoteActorEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoteActorEvent&&(identical(other.note, note) || other.note == note));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,note);
+
+@override
+String toString() {
+  return 'NoteActorEvent(note: $note)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $NoteActorEventCopyWith<$Res> {
-  factory $NoteActorEventCopyWith(
-          NoteActorEvent value, $Res Function(NoteActorEvent) then) =
-      _$NoteActorEventCopyWithImpl<$Res>;
-  $Res call({Note note});
+abstract mixin class $NoteActorEventCopyWith<$Res>  {
+  factory $NoteActorEventCopyWith(NoteActorEvent value, $Res Function(NoteActorEvent) _then) = _$NoteActorEventCopyWithImpl;
+@useResult
+$Res call({
+ Note note
+});
 
-  $NoteCopyWith<$Res> get note;
+
+$NoteCopyWith<$Res> get note;
+
 }
-
 /// @nodoc
 class _$NoteActorEventCopyWithImpl<$Res>
     implements $NoteActorEventCopyWith<$Res> {
-  _$NoteActorEventCopyWithImpl(this._value, this._then);
+  _$NoteActorEventCopyWithImpl(this._self, this._then);
 
-  final NoteActorEvent _value;
-  // ignore: unused_field
+  final NoteActorEvent _self;
   final $Res Function(NoteActorEvent) _then;
 
-  @override
-  $Res call({
-    Object? note = freezed,
-  }) {
-    return _then(_value.copyWith(
-      note: note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
-    ));
-  }
+/// Create a copy of NoteActorEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? note = null,}) {
+  return _then(_self.copyWith(
+note: null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
+as Note,
+  ));
+}
+/// Create a copy of NoteActorEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NoteCopyWith<$Res> get note {
+  
+  return $NoteCopyWith<$Res>(_self.note, (value) {
+    return _then(_self.copyWith(note: value));
+  });
+}
+}
 
-  @override
-  $NoteCopyWith<$Res> get note {
-    return $NoteCopyWith<$Res>(_value.note, (value) {
-      return _then(_value.copyWith(note: value));
-    });
-  }
+
+/// Adds pattern-matching-related methods to [NoteActorEvent].
+extension NoteActorEventPatterns on NoteActorEvent {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Deleted value)?  deleted,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Deleted() when deleted != null:
+return deleted(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Deleted value)  deleted,}){
+final _that = this;
+switch (_that) {
+case _Deleted():
+return deleted(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Deleted value)?  deleted,}){
+final _that = this;
+switch (_that) {
+case _Deleted() when deleted != null:
+return deleted(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( Note note)?  deleted,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Deleted() when deleted != null:
+return deleted(_that.note);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( Note note)  deleted,}) {final _that = this;
+switch (_that) {
+case _Deleted():
+return deleted(_that.note);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( Note note)?  deleted,}) {final _that = this;
+switch (_that) {
+case _Deleted() when deleted != null:
+return deleted(_that.note);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res>
-    implements $NoteActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
-  @override
-  $Res call({Note note});
 
-  @override
-  $NoteCopyWith<$Res> get note;
+
+class _Deleted implements NoteActorEvent {
+  const _Deleted(this.note);
+  
+
+@override final  Note note;
+
+/// Create a copy of NoteActorEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Deleted&&(identical(other.note, note) || other.note == note));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,note);
+
+@override
+String toString() {
+  return 'NoteActorEvent.deleted(note: $note)';
+}
+
+
 }
 
 /// @nodoc
-class __$DeletedCopyWithImpl<$Res> extends _$NoteActorEventCopyWithImpl<$Res>
+abstract mixin class _$DeletedCopyWith<$Res> implements $NoteActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) _then) = __$DeletedCopyWithImpl;
+@override @useResult
+$Res call({
+ Note note
+});
+
+
+@override $NoteCopyWith<$Res> get note;
+
+}
+/// @nodoc
+class __$DeletedCopyWithImpl<$Res>
     implements _$DeletedCopyWith<$Res> {
-  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
-      : super(_value, (v) => _then(v as _Deleted));
+  __$DeletedCopyWithImpl(this._self, this._then);
 
-  @override
-  _Deleted get _value => super._value as _Deleted;
+  final _Deleted _self;
+  final $Res Function(_Deleted) _then;
 
-  @override
-  $Res call({
-    Object? note = freezed,
-  }) {
-    return _then(_Deleted(
-      note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as Note,
-    ));
-  }
+/// Create a copy of NoteActorEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? note = null,}) {
+  return _then(_Deleted(
+null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
+as Note,
+  ));
 }
 
-/// @nodoc
-
-class _$_Deleted implements _Deleted {
-  const _$_Deleted(this.note);
-
-  @override
-  final Note note;
-
-  @override
-  String toString() {
-    return 'NoteActorEvent.deleted(note: $note)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Deleted &&
-            (identical(other.note, note) ||
-                const DeepCollectionEquality().equals(other.note, note)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(note);
-
-  @JsonKey(ignore: true)
-  @override
-  _$DeletedCopyWith<_Deleted> get copyWith =>
-      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Note note) deleted,
-  }) {
-    return deleted(note);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Note note)? deleted,
-    required TResult orElse(),
-  }) {
-    if (deleted != null) {
-      return deleted(note);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Deleted value) deleted,
-  }) {
-    return deleted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Deleted value)? deleted,
-    required TResult orElse(),
-  }) {
-    if (deleted != null) {
-      return deleted(this);
-    }
-    return orElse();
-  }
+/// Create a copy of NoteActorEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NoteCopyWith<$Res> get note {
+  
+  return $NoteCopyWith<$Res>(_self.note, (value) {
+    return _then(_self.copyWith(note: value));
+  });
 }
-
-abstract class _Deleted implements NoteActorEvent {
-  const factory _Deleted(Note note) = _$_Deleted;
-
-  @override
-  Note get note => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$DeletedCopyWith<_Deleted> get copyWith =>
-      throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$NoteActorStateTearOff {
-  const _$NoteActorStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _DeleteSuccess deleteSuccess() {
-    return const _DeleteSuccess();
-  }
-
-  _DeleteFailure deleteFailure(NoteFailure noteFailure) {
-    return _DeleteFailure(
-      noteFailure,
-    );
-  }
-}
-
-/// @nodoc
-const $NoteActorState = _$NoteActorStateTearOff();
 
 /// @nodoc
 mixin _$NoteActorState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure noteFailure) deleteFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_DeleteFailure value) deleteFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoteActorState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'NoteActorState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $NoteActorStateCopyWith<$Res> {
-  factory $NoteActorStateCopyWith(
-          NoteActorState value, $Res Function(NoteActorState) then) =
-      _$NoteActorStateCopyWithImpl<$Res>;
+class $NoteActorStateCopyWith<$Res>  {
+$NoteActorStateCopyWith(NoteActorState _, $Res Function(NoteActorState) __);
 }
 
-/// @nodoc
-class _$NoteActorStateCopyWithImpl<$Res>
-    implements $NoteActorStateCopyWith<$Res> {
-  _$NoteActorStateCopyWithImpl(this._value, this._then);
 
-  final NoteActorState _value;
-  // ignore: unused_field
-  final $Res Function(NoteActorState) _then;
+/// Adds pattern-matching-related methods to [NoteActorState].
+extension NoteActorStatePatterns on NoteActorState {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _ActionInProgress value)?  actionInProgress,TResult Function( _DeleteSuccess value)?  deleteSuccess,TResult Function( _DeleteFailure value)?  deleteFailure,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case _ActionInProgress() when actionInProgress != null:
+return actionInProgress(_that);case _DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess(_that);case _DeleteFailure() when deleteFailure != null:
+return deleteFailure(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _ActionInProgress value)  actionInProgress,required TResult Function( _DeleteSuccess value)  deleteSuccess,required TResult Function( _DeleteFailure value)  deleteFailure,}){
+final _that = this;
+switch (_that) {
+case _Initial():
+return initial(_that);case _ActionInProgress():
+return actionInProgress(_that);case _DeleteSuccess():
+return deleteSuccess(_that);case _DeleteFailure():
+return deleteFailure(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _ActionInProgress value)?  actionInProgress,TResult? Function( _DeleteSuccess value)?  deleteSuccess,TResult? Function( _DeleteFailure value)?  deleteFailure,}){
+final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial(_that);case _ActionInProgress() when actionInProgress != null:
+return actionInProgress(_that);case _DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess(_that);case _DeleteFailure() when deleteFailure != null:
+return deleteFailure(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  actionInProgress,TResult Function()?  deleteSuccess,TResult Function( NoteFailure noteFailure)?  deleteFailure,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case _ActionInProgress() when actionInProgress != null:
+return actionInProgress();case _DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess();case _DeleteFailure() when deleteFailure != null:
+return deleteFailure(_that.noteFailure);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  actionInProgress,required TResult Function()  deleteSuccess,required TResult Function( NoteFailure noteFailure)  deleteFailure,}) {final _that = this;
+switch (_that) {
+case _Initial():
+return initial();case _ActionInProgress():
+return actionInProgress();case _DeleteSuccess():
+return deleteSuccess();case _DeleteFailure():
+return deleteFailure(_that.noteFailure);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  actionInProgress,TResult? Function()?  deleteSuccess,TResult? Function( NoteFailure noteFailure)?  deleteFailure,}) {final _that = this;
+switch (_that) {
+case _Initial() when initial != null:
+return initial();case _ActionInProgress() when actionInProgress != null:
+return actionInProgress();case _DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess();case _DeleteFailure() when deleteFailure != null:
+return deleteFailure(_that.noteFailure);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'NoteActorState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure noteFailure) deleteFailure,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_DeleteFailure value) deleteFailure,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements NoteActorState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$NoteActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
-
-  @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
-}
-
-/// @nodoc
-
-class _$_ActionInProgress implements _ActionInProgress {
-  const _$_ActionInProgress();
-
-  @override
-  String toString() {
-    return 'NoteActorState.actionInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure noteFailure) deleteFailure,
-  }) {
-    return actionInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (actionInProgress != null) {
-      return actionInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_DeleteFailure value) deleteFailure,
-  }) {
-    return actionInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (actionInProgress != null) {
-      return actionInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ActionInProgress implements NoteActorState {
-  const factory _ActionInProgress() = _$_ActionInProgress;
-}
-
-/// @nodoc
-abstract class _$DeleteSuccessCopyWith<$Res> {
-  factory _$DeleteSuccessCopyWith(
-          _DeleteSuccess value, $Res Function(_DeleteSuccess) then) =
-      __$DeleteSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$DeleteSuccessCopyWithImpl<$Res>
-    extends _$NoteActorStateCopyWithImpl<$Res>
-    implements _$DeleteSuccessCopyWith<$Res> {
-  __$DeleteSuccessCopyWithImpl(
-      _DeleteSuccess _value, $Res Function(_DeleteSuccess) _then)
-      : super(_value, (v) => _then(v as _DeleteSuccess));
-
-  @override
-  _DeleteSuccess get _value => super._value as _DeleteSuccess;
 }
 
 /// @nodoc
 
-class _$_DeleteSuccess implements _DeleteSuccess {
-  const _$_DeleteSuccess();
 
-  @override
-  String toString() {
-    return 'NoteActorState.deleteSuccess()';
-  }
+class _Initial implements NoteActorState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeleteSuccess);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure noteFailure) deleteFailure,
-  }) {
-    return deleteSuccess();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (deleteSuccess != null) {
-      return deleteSuccess();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_DeleteFailure value) deleteFailure,
-  }) {
-    return deleteSuccess(this);
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (deleteSuccess != null) {
-      return deleteSuccess(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class _DeleteSuccess implements NoteActorState {
-  const factory _DeleteSuccess() = _$_DeleteSuccess;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'NoteActorState.initial()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _ActionInProgress implements NoteActorState {
+  const _ActionInProgress();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ActionInProgress);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'NoteActorState.actionInProgress()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _DeleteSuccess implements NoteActorState {
+  const _DeleteSuccess();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteSuccess);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'NoteActorState.deleteSuccess()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _DeleteFailure implements NoteActorState {
+  const _DeleteFailure(this.noteFailure);
+  
+
+ final  NoteFailure noteFailure;
+
+/// Create a copy of NoteActorState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$DeleteFailureCopyWith<_DeleteFailure> get copyWith => __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteFailure&&(identical(other.noteFailure, noteFailure) || other.noteFailure == noteFailure));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,noteFailure);
+
+@override
+String toString() {
+  return 'NoteActorState.deleteFailure(noteFailure: $noteFailure)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$DeleteFailureCopyWith<$Res> {
-  factory _$DeleteFailureCopyWith(
-          _DeleteFailure value, $Res Function(_DeleteFailure) then) =
-      __$DeleteFailureCopyWithImpl<$Res>;
-  $Res call({NoteFailure noteFailure});
+abstract mixin class _$DeleteFailureCopyWith<$Res> implements $NoteActorStateCopyWith<$Res> {
+  factory _$DeleteFailureCopyWith(_DeleteFailure value, $Res Function(_DeleteFailure) _then) = __$DeleteFailureCopyWithImpl;
+@useResult
+$Res call({
+ NoteFailure noteFailure
+});
 
-  $NoteFailureCopyWith<$Res> get noteFailure;
+
+$NoteFailureCopyWith<$Res> get noteFailure;
+
 }
-
 /// @nodoc
 class __$DeleteFailureCopyWithImpl<$Res>
-    extends _$NoteActorStateCopyWithImpl<$Res>
     implements _$DeleteFailureCopyWith<$Res> {
-  __$DeleteFailureCopyWithImpl(
-      _DeleteFailure _value, $Res Function(_DeleteFailure) _then)
-      : super(_value, (v) => _then(v as _DeleteFailure));
+  __$DeleteFailureCopyWithImpl(this._self, this._then);
 
-  @override
-  _DeleteFailure get _value => super._value as _DeleteFailure;
+  final _DeleteFailure _self;
+  final $Res Function(_DeleteFailure) _then;
 
-  @override
-  $Res call({
-    Object? noteFailure = freezed,
-  }) {
-    return _then(_DeleteFailure(
-      noteFailure == freezed
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure,
-    ));
-  }
-
-  @override
-  $NoteFailureCopyWith<$Res> get noteFailure {
-    return $NoteFailureCopyWith<$Res>(_value.noteFailure, (value) {
-      return _then(_value.copyWith(noteFailure: value));
-    });
-  }
+/// Create a copy of NoteActorState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? noteFailure = null,}) {
+  return _then(_DeleteFailure(
+null == noteFailure ? _self.noteFailure : noteFailure // ignore: cast_nullable_to_non_nullable
+as NoteFailure,
+  ));
 }
 
-/// @nodoc
-
-class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure(this.noteFailure);
-
-  @override
-  final NoteFailure noteFailure;
-
-  @override
-  String toString() {
-    return 'NoteActorState.deleteFailure(noteFailure: $noteFailure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DeleteFailure &&
-            (identical(other.noteFailure, noteFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.noteFailure, noteFailure)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(noteFailure);
-
-  @JsonKey(ignore: true)
-  @override
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
-      __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() actionInProgress,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure noteFailure) deleteFailure,
-  }) {
-    return deleteFailure(noteFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure noteFailure)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (deleteFailure != null) {
-      return deleteFailure(noteFailure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ActionInProgress value) actionInProgress,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_DeleteFailure value) deleteFailure,
-  }) {
-    return deleteFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_DeleteFailure value)? deleteFailure,
-    required TResult orElse(),
-  }) {
-    if (deleteFailure != null) {
-      return deleteFailure(this);
-    }
-    return orElse();
-  }
+/// Create a copy of NoteActorState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NoteFailureCopyWith<$Res> get noteFailure {
+  
+  return $NoteFailureCopyWith<$Res>(_self.noteFailure, (value) {
+    return _then(_self.copyWith(noteFailure: value));
+  });
+}
 }
 
-abstract class _DeleteFailure implements NoteActorState {
-  const factory _DeleteFailure(NoteFailure noteFailure) = _$_DeleteFailure;
-
-  NoteFailure get noteFailure => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

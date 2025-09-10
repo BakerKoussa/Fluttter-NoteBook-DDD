@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:exampleddd/application/auth/auth_bloc.dart';
-import 'package:exampleddd/presentation/routes/router.gr.dart';
+import 'package:exampleddd/presentation/routes/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {

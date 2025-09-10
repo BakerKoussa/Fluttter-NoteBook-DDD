@@ -18,42 +18,55 @@ part 'note_watcher_bloc.freezed.dart';
 class NoteWatcherBloc extends Bloc<NoteWatcherEvent, NoteWatcherState> {
   final INoteRepository _noteRepository;
 
-  NoteWatcherBloc(this._noteRepository) : super(const NoteWatcherState.initial());
+  NoteWatcherBloc(this._noteRepository)
+      : super(const NoteWatcherState.initial()) {
+    on<_WatchAllStarted>(_onWatchAllStarted);
+    on<_WatchUncompletedStarted>(_onWatchUncompletedStarted);
+    on<_NotesReceived>(_onNotesReceived);
+  }
 
-  late StreamSubscription<Either<NoteFailure, KtList<Note>>>
-      _noteStreamSubscription;
+  StreamSubscription<Either<NoteFailure, KtList<Note>>>? _noteStreamSubscription;
 
-  @override
-  Stream<NoteWatcherState> mapEventToState(
-    NoteWatcherEvent event,
-  ) async* {
-    yield* event.map(
-      watchAllStarted: (e) async* {
-        yield const NoteWatcherState.loadInProgress();
-        _noteStreamSubscription = _noteRepository.watchAll().listen(
-              (failureOrnotes) =>
-                  add(NoteWatcherEvent.notesReceived(failureOrnotes)),
-            );
-      },
-      watchUncompletedStarted: (e) async* {
-        yield const NoteWatcherState.loadInProgress();
-        await _noteStreamSubscription.cancel();
-        _noteStreamSubscription = _noteRepository.watchUncompleted().listen(
-              (failureOrnotes) =>
-                  add(NoteWatcherEvent.notesReceived(failureOrnotes)),
-            );
-      },
-      notesReceived: (e) async* {
-        yield e.failureOrNotes.fold(
-          (f) => NoteWatcherState.loadFailure(f),
-          (notes) => NoteWatcherState.loadSuccess(notes),
-        );
+  Future<void> _onWatchAllStarted(
+      _WatchAllStarted event,
+      Emitter<NoteWatcherState> emit,
+      ) async {
+    emit(const NoteWatcherState.loadInProgress());
+    await _noteStreamSubscription?.cancel();
+    _noteStreamSubscription = _noteRepository.watchAll().listen(
+          (failureOrNotes) {
+        add(NoteWatcherEvent.notesReceived(failureOrNotes));
       },
     );
   }
+
+  Future<void> _onWatchUncompletedStarted(
+      _WatchUncompletedStarted event,
+      Emitter<NoteWatcherState> emit,
+      ) async {
+    emit(const NoteWatcherState.loadInProgress());
+    await _noteStreamSubscription?.cancel();
+    _noteStreamSubscription = _noteRepository.watchUncompleted().listen(
+          (failureOrNotes) {
+        add(NoteWatcherEvent.notesReceived(failureOrNotes));
+      },
+    );
+  }
+
+  void _onNotesReceived(
+      _NotesReceived event,
+      Emitter<NoteWatcherState> emit,
+      ) {
+    emit(event.failureOrNotes.fold(
+          (f) => NoteWatcherState.loadFailure(f),
+          (notes) => NoteWatcherState.loadSuccess(notes),
+    ));
+  }
+
   @override
-  Future<void> close() async{
-    await _noteStreamSubscription.cancel();
+  Future<void> close() async {
+    await _noteStreamSubscription?.cancel();
     return super.close();
   }
 }
+

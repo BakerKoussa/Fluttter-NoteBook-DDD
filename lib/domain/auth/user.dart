@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'user.freezed.dart';
 
 @freezed
-class Userr with _$Userr{
+abstract class Userr with _$Userr{
   const factory Userr({
     required UniqueId id,
 })= _Userr;

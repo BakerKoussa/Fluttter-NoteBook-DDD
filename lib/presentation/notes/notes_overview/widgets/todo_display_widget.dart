@@ -15,7 +15,7 @@ class TodoDisplayWidget extends StatelessWidget {
       children: [
         if(todo.done)
           Icon(Icons.check_box,
-          color: Theme.of(context).accentColor,
+          color: Theme.of(context).colorScheme.secondary,
           )
         else
           Icon(Icons.check_box_outline_blank,

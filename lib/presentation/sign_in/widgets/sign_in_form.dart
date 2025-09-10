@@ -2,12 +2,14 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:exampleddd/application/auth/auth_bloc.dart';
 import 'package:exampleddd/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:exampleddd/presentation/routes/router.gr.dart';
+import 'package:exampleddd/domain/auth/auth_failure.dart';
+import 'package:exampleddd/domain/core/failures.dart';
+import 'package:exampleddd/presentation/routes/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm({Key? key}) : super(key: key);
+  const SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -133,8 +135,7 @@ class SignInForm extends StatelessWidget {
                       );
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
+                  foregroundColor: Colors.white, backgroundColor: Colors.blue,
                   textStyle: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 child: const Text('SIGN iN WITH GOOGLE'),
